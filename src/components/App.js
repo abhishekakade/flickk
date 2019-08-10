@@ -1,12 +1,15 @@
 import React from "react";
 import "../App.css";
+import HomePage from "./HomePage";
+import Header from "./Header";
+import MovieCard from "./MovieCard";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 id="title">Flickk</h1>
-      </header>
+      <Header />
+      <HomePage />
+      <MovieCard />
     </div>
   );
 }
