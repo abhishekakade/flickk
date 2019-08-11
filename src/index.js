@@ -3,16 +3,26 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./components/App";
 import * as serviceWorker from "./serviceWorker";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-import rootReducer from "./reducers";
-import { fetchMovies } from "./actions";
+// import { fetchMovies } from "./actions";
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+import { createLogger } from "redux-logger";
 
-store.dispatch(fetchMovies());
+import { fetchMoviesReducer } from "./reducers/MoviesReducer";
+
+const rootReducer = combineReducers({ fetchMoviesReducer });
+
+const logger = createLogger();
+
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+
+console.log(store.getState());
+
+// store.dispatch(fetchMovies());
+// console.log(store.getState());
 
 ReactDOM.render(
   <Provider store={store}>

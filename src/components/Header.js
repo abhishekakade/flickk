@@ -24,6 +24,7 @@ export default class Header extends Component {
               textAlign: "left",
               display: "inline-block",
               margin: "0.5rem 1rem",
+              color: "#dddddd",
               userSelect: "none"
             }}
             id="title"
@@ -49,7 +50,7 @@ export default class Header extends Component {
             <a
               style={{
                 textDecoration: "none",
-                color: "#eeeeee"
+                color: "#cccccc"
               }}
               href="http://www.themoviedb.org"
               target="_blank"
@@ -60,7 +61,7 @@ export default class Header extends Component {
                 src={tmdblogo}
                 alt="www.themoviedb.org"
                 style={{
-                  height: "2.5rem",
+                  height: "2rem",
                   verticalAlign: "middle"
                 }}
               />
